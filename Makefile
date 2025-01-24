@@ -1,7 +1,7 @@
 install:
     pip install --upgrade pip &&\
     pip install -r requirements.txt
-
+    
 format:
     black *.py
 
@@ -20,3 +20,4 @@ update-branch:
     git config --global user.email $(USER_EMAIL)
     git commit -am "Update with new results"
     git push --force origin HEAD:update
+    
