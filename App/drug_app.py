@@ -41,7 +41,7 @@ examples = [
 
 title = "Drug Classifier"
 description = "Enter the details to correctly identify Drug type?"
-article = "This app is a part of the Beginner's Guide to CI/CD for Machine Learning. It teaches how to automate training, evaluation, and deployment of models to Hugging Face using GitHub Actions."
+article = "This app is developed to Learn CI/CD for Machine Learning. To automate training, evaluation, and deployment of models to Hugging Face Space using GitHub Actions."
 
 gr.Interface(
     fn=predict_drug,
@@ -50,6 +50,6 @@ gr.Interface(
     examples=examples,
     title=title,
     description=description,
-    article=article,
+    #article=article,
     theme=gr.themes.Soft(),
 ).launch()
