@@ -1,15 +1,12 @@
 import gradio as gr
 import joblib
-import skops.io as sio
-
-#pipe = sio.load("./Model/drug_pipeline.skops", trusted=True)
 
 # Load the model using joblib
 pipe = joblib.load("./Model/drug_pipeline.joblib")
 
-
 def predict_drug(age, sex, blood_pressure, cholesterol, na_to_k_ratio):
-    ""Predict drugs based on patient features.
+    """
+    Predict drugs based on patient features.
 
     Args:
         age (int): Age of patient
@@ -27,7 +24,6 @@ def predict_drug(age, sex, blood_pressure, cholesterol, na_to_k_ratio):
     label = f"Predicted Drug: {predicted_drug}"
     return label
 
-
 inputs = [
     gr.Slider(15, 74, step=1, label="Age"),
     gr.Radio(["M", "F"], label="Sex"),
@@ -43,11 +39,9 @@ examples = [
     [50, "M", "HIGH", "HIGH", 34],
 ]
 
-
 title = "Drug Classification"
 description = "Enter the details to correctly identify Drug type?"
 article = "This app is a part of the Beginner's Guide to CI/CD for Machine Learning. It teaches how to automate training, evaluation, and deployment of models to Hugging Face using GitHub Actions."
-
 
 gr.Interface(
     fn=predict_drug,
