@@ -35,3 +35,5 @@ push-hub:
     	huggingface-cli upload utsavbits/Drug-Classifier ./Results /Metrics --repo-type=space --commit-message="Sync Model"
 
 deploy: hf-login push-hub
+
+all: install format train eval update-branch deploy
