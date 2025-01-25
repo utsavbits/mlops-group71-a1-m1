@@ -15,6 +15,15 @@ jobs:
       - uses: iterative/setup-cml@v2
       - name: Install Packages
         run: make install
+      - name: Lint
+        run: |
+          flake8 *.py || true
+          flake8 *.py > flake8-report.txt || true
+      - name: Upload Lint Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: flake8-report
+          path: flake8-report.txt
       - name: Format
         run: make format
       - name: Train
