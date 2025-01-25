@@ -24,6 +24,8 @@ jobs:
         with:
           name: flake8-report
           path: flake8-report.txt
+      - name: Test
+        run: pytest
       - name: Format
         run: make format
       - name: Train

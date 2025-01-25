@@ -6,7 +6,10 @@ lint:
 	flake8 *.py
 
 format:	
-	black *.py 
+	black *.py
+
+test:
+	pytest
 
 train:
 	python train.py
