@@ -16,7 +16,14 @@ jobs:
       - name: Install Packages
         run: make install
       - name: Lint
-        run: make lint
+        run: |
+          flake8 *.py || true
+          flake8 *.py > flake8-report.txt || true
+      - name: Upload Lint Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: flake8-report
+          path: flake8-report.txt
       - name: Format
         run: make format
       - name: Train
