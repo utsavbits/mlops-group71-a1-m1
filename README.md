@@ -15,5 +15,6 @@ The choices made were aimed at ensuring a robust, automated, and efficient CI/CD
 
 # Deployed Model
 Link: https://huggingface.co/spaces/utsavbits/Drug-Classifier
+Note: HF space need to restarted when required.
 
 
