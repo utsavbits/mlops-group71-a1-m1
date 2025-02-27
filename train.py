@@ -6,7 +6,12 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OrdinalEncoder, StandardScaler
-from sklearn.metrics import accuracy_score, f1_score, ConfusionMatrixDisplay, confusion_matrix
+from sklearn.metrics import (
+    accuracy_score,
+    f1_score,
+    ConfusionMatrixDisplay,
+    confusion_matrix,
+)
 import matplotlib.pyplot as plt
 import joblib
 
@@ -23,8 +28,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 ### Machine Learning Pipelines
-cat_col = [1,2,3]
-num_col = [0,4]
+cat_col = [1, 2, 3]
+num_col = [0, 4]
 
 transform = ColumnTransformer(
     [

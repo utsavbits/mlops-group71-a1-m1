@@ -9,11 +9,13 @@ from sklearn.preprocessing import OrdinalEncoder, StandardScaler
 from sklearn.metrics import accuracy_score, f1_score
 import joblib
 
+
 # Test data loading
 def test_data_loading():
     drug_df = pd.read_csv("Data/drug.csv")
     assert not drug_df.empty, "Dataframe is empty"
     assert "Drug" in drug_df.columns, "Drug column is missing"
+
 
 # Test train-test split
 def test_train_test_split():
@@ -27,6 +29,7 @@ def test_train_test_split():
     assert len(X_test) > 0, "Test set is empty"
     assert len(y_train) > 0, "Training labels are empty"
     assert len(y_test) > 0, "Test labels are empty"
+
 
 # Test model training
 def test_model_training():
